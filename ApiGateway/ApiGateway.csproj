@@ -9,11 +9,11 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <PackageId>LightestNight.System.Serverless.Aws</PackageId>
+        <PackageId>LightestNight.System.Serverless.Aws.ApiGateway</PackageId>
         <Authors>James Woodley</Authors>
         <Company>LightestNight Ltd</Company>
-        <Title>LightestNight :: System :: Serverless :: AWS</Title>
-        <Description>Utilities and helper functions for when integrating with Amazon Web Services</Description>
+        <Title>LightestNight :: System :: Serverless :: AWS :: ApiGateway</Title>
+        <Description>Utilities and helper functions for when integrating with Amazon Web Services Api Gateway</Description>
         <PackageTags>lightestnight;system;infrastructure;serverless;aws;lambda;api;gateway</PackageTags>
         <Version>1.0.0</Version>
         <PackageVersion>1.0.0</PackageVersion>
