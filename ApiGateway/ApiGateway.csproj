@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <AssemblyName>LightestNight.System.Serverless.AWS.ApiGateway</AssemblyName>
+        <RootNamespace>LightestNight.System.Serverless.AWS.ApiGateway</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Amazon.Lambda.APIGatewayEvents" Version="1.2.0" />
+    </ItemGroup>
+
+</Project>
