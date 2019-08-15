@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace LightestNight.System.Serverless.AWS.ApiGateway
 {
-    public static class Responses
+    public static class ApiResponse
     {
         /// <summary>
         /// Creates an API Response of the correct format for AWS API Gateway
