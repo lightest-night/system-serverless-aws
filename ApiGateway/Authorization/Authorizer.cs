@@ -8,13 +8,15 @@ using System.Threading.Tasks;
 using Amazon.Lambda.APIGatewayEvents;
 using LightestNight.System.Api;
 using LightestNight.System.Configuration;
+using LightestNight.System.Serverless.AWS.ApiGateway.Authorization;
 using LightestNight.System.Serverless.AWS.ApiGateway.Authorization.Exceptions;
 using LightestNight.System.Serverless.AWS.ApiGateway.Authorization.Tokens;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using RestSharp;
 
-namespace LightestNight.System.Serverless.AWS.ApiGateway.Authorization
+// ReSharper disable once CheckNamespace
+namespace Authorization
 {
     public class Authorizer
     {
