@@ -1,27 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using Amazon.Lambda.APIGatewayEvents;
-using LightestNight.System.Api;
-using LightestNight.System.Configuration;
-using LightestNight.System.Serverless.AWS.ApiGateway.Authorization;
-using LightestNight.System.Serverless.AWS.ApiGateway.Authorization.Exceptions;
-using LightestNight.System.Serverless.AWS.ApiGateway.Authorization.Tokens;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
-using RestSharp;
+
 
 // ReSharper disable once CheckNamespace
 namespace Authorization
 {
     public class Authorizer
     {
-        private readonly IServiceProvider _serviceProvider;
-
+        /*private readonly IServiceProvider _serviceProvider;
+        
         public Authorizer(IServiceProvider serviceProvider)
         {
             _serviceProvider = serviceProvider;
@@ -96,8 +81,11 @@ namespace Authorization
         private static async Task<dynamic> GetJwtConfiguration(AuthorizationConfiguration configuration)
         {
             var restClient = new CoreClient(configuration.IssuerUrl);
-            var configurationRequest = new RestRequest(configuration.OpenIdConfigurationResource, Method.GET);
-            return (await restClient.MakeRequest<dynamic>(configurationRequest, true, false)).Data;
+            var configurationRequest = new ApiRequest(configuration.OpenIdConfigurationResource)
+            {
+                HttpMethod = HttpMethods.Get
+            };
+            return (await restClient.MakeApiRequest<dynamic>(configurationRequest)).Data;
         }
         
         private static async Task<Jwks> GetJwks(Uri jwksUri, AuthorizationConfiguration configuration)
@@ -157,6 +145,6 @@ namespace Authorization
             }
             
             return validatedSecurityToken as JwtSecurityToken;
-        }
+        }*/
     }
 }

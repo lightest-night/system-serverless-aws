@@ -26,8 +26,8 @@
 
     <ItemGroup>
       <PackageReference Include="Amazon.Lambda.APIGatewayEvents" Version="1.2.0" />
-      <PackageReference Include="LightestNight.System.Api" Version="1.2.0" />
-      <PackageReference Include="LightestNight.System.Configuration" Version="1.1.0" />
+      <PackageReference Include="LightestNight.System.Api" Version="1.5.0" />
+      <PackageReference Include="LightestNight.System.Configuration" Version="1.2.0" />
       <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
       <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.5.0" />
     </ItemGroup>
