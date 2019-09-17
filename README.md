@@ -1,7 +1,7 @@
 # Lightest Night
-## Serverless > AWS
+## Serverless > AWS > API Gateway
 
-Utilities and helper functions for when integrating with Amazon Web Services
+Utilities and helper functions for when integrating with Amazon Web Services API Gateway
 
 #### How To Use
 ##### API Gateway
