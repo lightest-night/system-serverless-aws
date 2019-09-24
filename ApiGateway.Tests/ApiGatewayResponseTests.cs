@@ -6,7 +6,7 @@ using Xunit;
 
 namespace LightestNight.System.Serverless.AWS.ApiGateway.Tests
 {
-    public class ApiResponseTests
+    public class ApiGatewayResponseTests
     {
         [Fact]
         public void Should_Create_Conflict_Response()
@@ -15,7 +15,7 @@ namespace LightestNight.System.Serverless.AWS.ApiGateway.Tests
             const string message = "Test Conflict Response";
             
             // Act
-            var result = ApiResponse.Conflict(message);
+            var result = ApiGatewayResponse.Conflict(message);
             
             // Assert
             result.StatusCode.ShouldBe((int) HttpStatusCode.Conflict);
@@ -29,7 +29,7 @@ namespace LightestNight.System.Serverless.AWS.ApiGateway.Tests
             var exception = new Exception("Test Message");
             
             // Act
-            var result = ApiResponse.InternalServerError(exception);
+            var result = ApiGatewayResponse.InternalServerError(exception);
             
             // Assert
             result.StatusCode.ShouldBe((int) HttpStatusCode.InternalServerError);
@@ -44,7 +44,7 @@ namespace LightestNight.System.Serverless.AWS.ApiGateway.Tests
             var testObject = new TestObject {Foo = "Test"};
             
             // Act
-            var result = ApiResponse.Ok(testObject);
+            var result = ApiGatewayResponse.Ok(testObject);
             
             // Assert
             result.StatusCode.ShouldBe((int) HttpStatusCode.OK);
@@ -55,7 +55,7 @@ namespace LightestNight.System.Serverless.AWS.ApiGateway.Tests
         public void Should_Create_NoContent_Response()
         {
             // Act
-            var result = ApiResponse.NoContent();
+            var result = ApiGatewayResponse.NoContent();
             
             // Assert
             result.StatusCode.ShouldBe((int) HttpStatusCode.NoContent);
