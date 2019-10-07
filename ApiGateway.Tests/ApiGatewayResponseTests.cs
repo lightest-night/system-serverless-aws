@@ -19,7 +19,21 @@ namespace LightestNight.System.Serverless.AWS.ApiGateway.Tests
             
             // Assert
             result.StatusCode.ShouldBe((int) HttpStatusCode.Conflict);
-            result.Body.ShouldBe(JsonConvert.SerializeObject(message));
+            result.Body.ShouldBe(message);
+        }
+        
+        [Fact]
+        public void Should_Create_NotFound_Response()
+        {
+            // Arrange
+            const string message = "Test Not Found Response";
+            
+            // Act
+            var result = ApiGatewayResponse.NotFound(message);
+            
+            // Assert
+            result.StatusCode.ShouldBe((int) HttpStatusCode.NotFound);
+            result.Body.ShouldBe(message);
         }
 
         [Fact]

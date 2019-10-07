@@ -27,8 +27,11 @@ namespace LightestNight.System.Serverless.AWS.ApiGateway
             => new APIGatewayProxyResponse
             {
                 StatusCode = (int) statusCode,
-                Body = EqualityComparer<TResponse>.Default.Equals(responseData, default) ? null : JsonConvert.SerializeObject(responseData),
-                
+                Body = EqualityComparer<TResponse>.Default.Equals(responseData, default) 
+                    ? null
+                    : typeof(TResponse) == typeof(string)
+                      ? responseData.ToString()
+                      : JsonConvert.SerializeObject(responseData)
             };
 
         /// <summary>
@@ -72,5 +75,14 @@ namespace LightestNight.System.Serverless.AWS.ApiGateway
         /// <returns>A new instance of <see cref="APIGatewayProxyResponse" /> with a Conflict status code</returns>
         public static APIGatewayProxyResponse Conflict(string message)
             => CreateResponse(HttpStatusCode.Conflict, message);
+
+        /// <summary>
+        /// Creates a Not Found Response in the correct format for AWS API Gateway
+        /// </summary>
+        /// <param name="message">Any message to include in the response body</param>
+        /// <remarks>Http Status Code 404</remarks>
+        /// <returns>A new instance of <see cref="APIGatewayProxyResponse" /> with a Not Found status code</returns>
+        public static APIGatewayProxyResponse NotFound(string message)
+            => CreateResponse(HttpStatusCode.NotFound, message);
     }
 }
