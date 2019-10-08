@@ -22,12 +22,11 @@ namespace LightestNight.System.Serverless.AWS.ApiGateway.Tests
             result.Body.ShouldBe(message);
         }
         
-        [Fact]
-        public void Should_Create_NotFound_Response()
+        [Theory]
+        [InlineData("Something was not found")]
+        [InlineData(default)]
+        public void Should_Create_NotFound_Response(string message)
         {
-            // Arrange
-            const string message = "Test Not Found Response";
-            
             // Act
             var result = ApiGatewayResponse.NotFound(message);
             

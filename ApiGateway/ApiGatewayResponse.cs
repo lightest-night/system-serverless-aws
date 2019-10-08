@@ -82,7 +82,7 @@ namespace LightestNight.System.Serverless.AWS.ApiGateway
         /// <param name="message">Any message to include in the response body</param>
         /// <remarks>Http Status Code 404</remarks>
         /// <returns>A new instance of <see cref="APIGatewayProxyResponse" /> with a Not Found status code</returns>
-        public static APIGatewayProxyResponse NotFound(string message)
+        public static APIGatewayProxyResponse NotFound(string message = default)
             => CreateResponse(HttpStatusCode.NotFound, message);
     }
 }
